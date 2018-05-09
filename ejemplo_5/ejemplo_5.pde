@@ -29,6 +29,7 @@ void keyPressed() {
   int a=(int) random(0, 255);
   int b=(int) random(0, 255);
   int c=(int) random(0, 255);
-
+  //imrpime los numeros que representan los colores
+  println("colores"+a+","+b+","+c);
   background(a, b, c);
 }
