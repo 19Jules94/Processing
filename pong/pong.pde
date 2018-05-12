@@ -4,7 +4,7 @@ float rectSize =360;
 
 float circleX, circleY;
 
-float xSpeed =2, ySpeed =2;
+float xSpeed =3, ySpeed =3;
 void setup() {
 
 
@@ -20,7 +20,6 @@ void draw() {
   tablero();
   jugadores();
   pelota();
- 
 }
 
 
@@ -36,8 +35,8 @@ void jugadores() {
 
   fill(255, 255, 255);
 
-  rect(0, 0, 20, height);
-  rect(width-30, mouseY-rectSize/2, 10, rectSize);
+  rect(1, 0, 10, height);
+  rect(width-20, mouseY, 10, 40);
 }
 
 void pelota() {
@@ -48,19 +47,19 @@ void pelota() {
   circleX = circleX + xSpeed;
   circleY = circleY + ySpeed;
 
-  if (circleX > width -30 && circleX < width-20 && circleY > mouseY -rectSize/2 && circleY < mouseY+rectSize/2) {
+
+  if (circleX > width -30 && circleX < width-20 && circleY > mouseY -rectSize/2 && circleY < mouseY+40) {
     xSpeed = xSpeed*-1;
   }
-  
-   if (circleX < 25) {
-    xSpeed *= -1.1;
-    ySpeed *= 1.1;
-    xSpeed += xSpeed;
+
+  if (circleX < 25) {
+    xSpeed *= -1;
   }
+
 
   if (circleY > height || circleY <0) {
 
 
-   ySpeed = ySpeed*-1;// revertimos la velocidad y nos ahorramos la declaracion de abajo
+    ySpeed = ySpeed*-1;// revertimos la velocidad y nos ahorramos la declaracion de abajo
   }
 }
